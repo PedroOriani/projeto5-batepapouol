@@ -40,10 +40,16 @@
 
 .texts{
     width: 100%;
-    height: 100%;
+    height: 667px;
 
     background-color: #F3F3F3;
 
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+.texts::-webkit-scrollbar{
+    display: none;
 }
 
 .message{
@@ -85,4 +91,75 @@
     width: 22px;
     height: 22px;
 }
+
+/* --------------------------- FORMATAÇÃO DAS MENSAGENS ------------------------------ */
+
+.message-box{
+    width: 100%;
+    height: 40px;
+
+    background-color: #dcdcdc;
+
+    margin-bottom: 4px;
+
+    border-radius: 2px;
+    border: 4px solid #dcdcdc;
+
+    display: flex;
+    align-items: center;
+}
+
+.message-box-status{
+    width: 100%;
+    height: 40px;
+
+    background-color: #ffffff;
+
+    margin-bottom: 4px;
+
+    border-radius: 2px;
+    border: 4px solid #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.message-box-private{
+    width: 100%;
+    height: 40px;
+
+    background-color: #ffdede;
+
+    margin-bottom: 4px;
+
+    border-radius: 2px;
+    border: 4px solid #ffdede;
+
+    display: flex;
+    align-items: center;
+}
+
+.from, .to {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.text, .type {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.time {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #aaaaaa;
+}
+
 
