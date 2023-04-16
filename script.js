@@ -18,7 +18,7 @@ function nomeOK(resp){
     console.log(resp.statusText);
     console.log('Entrou no servidor com sucesso');
 
-    getDatas();
+    setInterval(getDatas(),3000);
 }
 
 function nomeErro(resp){

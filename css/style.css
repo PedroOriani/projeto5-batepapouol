@@ -48,6 +48,13 @@
     white-space: nowrap;
 }
 
+.div-body-test{
+    width: 100%;
+
+    margin-top: 84px;
+    margin-bottom: 84px;
+}
+
 .texts::-webkit-scrollbar{
     display: none;
 }
