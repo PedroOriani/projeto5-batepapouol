@@ -73,9 +73,9 @@ function renderTexts(){
             ulTexts.innerHTML += `
             <li data-test="message" class ="message-box-status">
                 <p class="break">
-                    <span class="time">(${texts[i].time})</span>
-                    <span class="from">${texts[i].from}</span>
-                    <span class="text">${texts[i].text}</span>
+                    <span class="time">(${texts[i].time })</span> 
+                    <span class="from">${texts[i].from }</span> 
+                    <span class="text">${texts[i].text }</span> 
                 </p>
             </li>        
             `; 

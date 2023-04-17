@@ -3,6 +3,8 @@
   }
 
 .body{
+    width: 375px;
+    height: 667px;
     position: relative;
 }
 
@@ -44,15 +46,16 @@
 
     background-color: #F3F3F3;
 
-    overflow-y: scroll;
-    white-space: nowrap;
 }
 
 .div-body-test{
-    width: 100%;
+    width: 375px;
+    height: 503px;
 
     margin-top: 84px;
     margin-bottom: 84px;
+
+    overflow-y: scroll;
 }
 
 .texts::-webkit-scrollbar{
@@ -65,7 +68,7 @@
 
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 587px;
 
     border: 18px solid #ffffff;
 
@@ -110,10 +113,13 @@
     margin-bottom: 4px;
 
     border-radius: 2px;
-    border: 4px solid #dcdcdc;
 
     border-top: 10px solid #dcdcdc;
     border-bottom: 10px solid #dcdcdc;
+    border-left: 8px solid #dcdcdc;
+    border-right: 9px solid #dcdcdc;
+
+    overflow-wrap: break-word;
 }
 
 .message-box{
@@ -125,7 +131,6 @@
     margin-bottom: 4px;
 
     border-radius: 2px;
-    border: 4px solid #ffffff;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -135,6 +140,8 @@
 
     border-top: 10px solid #ffffff;
     border-bottom: 10px solid #ffffff;
+    border-left: 8px solid #ffffff;
+    border-right: 9px solid #ffffff;
 
 }
 
@@ -147,7 +154,6 @@
     margin-bottom: 4px;
 
     border-radius: 2px;
-    border: 4px solid #ffdede;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -157,6 +163,8 @@
 
     border-top: 10px solid #ffdede;
     border-bottom: 10px solid #ffdede;
+    border-left: 8px solid #ffdede;
+    border-right: 9px solid #ffdede;
 }
 
 .from {
