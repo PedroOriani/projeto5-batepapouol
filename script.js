@@ -133,6 +133,7 @@ function msgOK(resp){
 
 function msgErro(resp){
     console.log(resp.response.status);
+    window.location.reload()
 }
 
 function get2OK(resp){
