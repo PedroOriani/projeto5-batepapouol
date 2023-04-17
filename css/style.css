@@ -4,7 +4,6 @@
 
 .body{
     width: 375px;
-    height: 667px;
     position: relative;
 }
 
@@ -42,8 +41,6 @@
 
 .texts{
     width: 375px;
-    height: 667px;
-
     background-color: #F3F3F3;
 
 }
@@ -118,8 +115,6 @@
     border-bottom: 10px solid #dcdcdc;
     border-left: 8px solid #dcdcdc;
     border-right: 9px solid #dcdcdc;
-
-    overflow-wrap: break-word;
 }
 
 .message-box{
