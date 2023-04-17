@@ -25,6 +25,7 @@ function nomeErro(resp){
     console.log(resp.response.status);
     if (resp.response.status === 400){
         alert ('Utilize outro nome, este ja esta sendo utilizado');
+        window.location.reload()
     }
 }
 
@@ -71,28 +72,34 @@ function renderTexts(){
         if (texts[i].type === 'status'){
             ulTexts.innerHTML += `
             <li data-test="message" class ="message-box-status">
-                <span class="time">(${texts[i].time})\u00A0 </span>
-                <span class="from">${texts[i].from}\u00A0 </span>
-                <span class="text">${texts[i].text}\u00A0 </span>
+                <p class="break">
+                    <span class="time">(${texts[i].time})</span>
+                    <span class="from">${texts[i].from}</span>
+                    <span class="text">${texts[i].text}</span>
+                </p>
             </li>        
             `; 
         }else if (texts[i].type === 'message'){
             ulTexts.innerHTML += `
             <li data-test="message" class ="message-box">
-                <span class="time">(${texts[i].time})\u00A0</span> 
-                <span class="from">${texts[i].from}\u00A0</span> para 
-                <span class="to">\u00A0${texts[i].to}</span>: 
-                <span class="text">\u00A0${texts[i].text}\u00A0</span> 
+                <p class="break">
+                    <span class="time">(${texts[i].time})</span> 
+                    <span class="from">${texts[i].from}</span> para 
+                    <span class="to">${texts[i].to}</span>: 
+                    <span class="text">${texts[i].text}</span>
+                </p>
             </li>        
             `; 
         }
-        else if (texts[i].type === 'message'){
+        else if (texts[i].type === 'private'){
             ulTexts.innerHTML += `
             <li data-test="message" class ="message-box-private">
-                <span class="time">(${texts[i].time})\u00A0</span> 
-                <span class="from">${texts[i].from}\u00A0</span> reservadamente para 
-                <span class="to">\u00A0${texts[i].to}: </span> 
-                <span class="text">\u00A0${texts[i].text}\u00A0</span> 
+                <p class="break">
+                    <span class="time">(${texts[i].time})</span> 
+                    <span class="from">${texts[i].from}</span> reservadamente para 
+                    <span class="to">${texts[i].to}: </span>
+                    <span class="text">${texts[i].text}</span>
+                <p>    
             </li>        
             `; 
         }

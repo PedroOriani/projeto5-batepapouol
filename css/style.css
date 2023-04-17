@@ -7,7 +7,7 @@
 }
 
 .sup {
-    width: 100%;
+    width: 375px;
     height: 80px;
 
     position: absolute;
@@ -39,7 +39,7 @@
 }
 
 .texts{
-    width: 100%;
+    width: 375px;
     height: 667px;
 
     background-color: #F3F3F3;
@@ -60,7 +60,7 @@
 }
 
 .message{
-    width: 100%;
+    width: 375px;
     height: 80px;
 
     position: absolute;
@@ -112,13 +112,8 @@
     border-radius: 2px;
     border: 4px solid #dcdcdc;
 
-    display: flex;
-    align-items: center;
-
     border-top: 10px solid #dcdcdc;
     border-bottom: 10px solid #dcdcdc;
-
-    word-break: break-word;
 }
 
 .message-box{
@@ -132,19 +127,15 @@
     border-radius: 2px;
     border: 4px solid #ffffff;
 
-    display: flex;
-    align-items: center;
-
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #000000;
 
-    word-wrap: break-word;
-
     border-top: 10px solid #ffffff;
     border-bottom: 10px solid #ffffff;
+
 }
 
 .message-box-private{
@@ -158,9 +149,6 @@
     border-radius: 2px;
     border: 4px solid #ffdede;
 
-    display: flex;
-    align-items: center;
-
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -169,8 +157,6 @@
 
     border-top: 10px solid #ffdede;
     border-bottom: 10px solid #ffdede;
-
-    word-break: break-word;
 }
 
 .from {
@@ -203,8 +189,8 @@
     font-size: 14px;
     line-height: 20px;
     color: #aaaaaa;
-
-    word-break: break-word;
 }
 
-
+.break{
+    word-break: break-word;
+}
