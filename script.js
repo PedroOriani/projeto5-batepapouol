@@ -2,13 +2,13 @@
 
 axios.defaults.headers.common['Authorization'] = 'nIJrwyOIT5oxsFJibUerf5Vi';
 
-const nome = {}
+const user= {}
 
-nome.name = prompt('Qual seu nome?');
+user.name = prompt('Qual seu nome?');
 
 function AccessServer(){
 
-    const promise = axios.post('https://mock-api.driven.com.br/api/vm/uol/participants', nome);
+    const promise = axios.post('https://mock-api.driven.com.br/api/vm/uol/participants', user);
     promise.then( nomeOK );
     promise.catch( nomeErro );
 }
@@ -18,7 +18,7 @@ function nomeOK(resp){
     console.log(resp.statusText);
     console.log('Entrou no servidor com sucesso');
 
-    setInterval(getDatas(),3000);
+    getDatas()
 }
 
 function nomeErro(resp){
@@ -50,7 +50,7 @@ function getOK(resp){
     console.log(resp.data);
     texts = resp.data;
 
-    renderTexts()
+    setInterval(renderTexts(), 3000);
 }
 
 function getErro(resp){
@@ -67,24 +67,73 @@ function renderTexts(){
 
         if (texts[i].type === 'status'){
             ulTexts.innerHTML += `
-            <li class ="message-box-status">
-                ${texts[i].time} ${texts[i].from} ${texts[i].text}
+            <li data-test="message" class ="message-box-status">
+                <span class="time">(${texts[i].time})\u00A0 </span>
+                <span class="from">${texts[i].from}\u00A0 </span>
+                <span class="text">${texts[i].text}\u00A0 </span>
             </li>        
             `; 
         }else if (texts[i].type === 'message'){
             ulTexts.innerHTML += `
-            <li class ="message-box">
-                ${texts[i].time} ${texts[i].from} para ${texts[i].to}: ${texts[i].text}
+            <li data-test="message" class ="message-box">
+                <span class="time">(${texts[i].time})\u00A0</span> 
+                <span class="from">${texts[i].from}\u00A0</span> para 
+                <span class="to">\u00A0${texts[i].to}</span>: 
+                <span class="text">\u00A0${texts[i].text}\u00A0</span> 
             </li>        
             `; 
         }
         else if (texts[i].type === 'message'){
             ulTexts.innerHTML += `
-            <li class ="message-box-private">
-                ${texts[i].time} ${texts[i].from} reservadamente para ${texts[i].to}: ${texts[i].text}
+            <li data-test="message" class ="message-box-private">
+                <span class="time">(${texts[i].time})\u00A0</span> 
+                <span class="from">${texts[i].from}\u00A0</span> reservadamente para 
+                <span class="to">\u00A0${texts[i].to}: </span> 
+                <span class="text">\u00A0${texts[i].text}\u00A0</span> 
             </li>        
             `; 
         }
            
     }
+}
+
+const newMsg = {};
+
+function newMessage(){
+    const msg = document.querySelector('.input-message').value;
+
+    newMsg.from = user.name;
+    newMsg.to = "Todos"
+    newMsg.text = msg
+    newMsg.type = "message";
+
+    console.log(newMsg)
+
+    sendMessage();
+
+    document.querySelector('.input-message').value = '';
+
+}
+
+function sendMessage(){
+    const promise = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', newMsg);
+    promise.then( msgOK );
+    promise.catch( msgErro );
+}
+
+function msgOK(resp){
+    console.log('Mensagem salva no servidor com sucesso');
+
+    const promise = axios.get('https://mock-api.driven.com.br/api/vm/uol/messages');
+    promise.then( get2OK );
+}
+
+function msgErro(resp){
+    console.log(resp.response.status);
+}
+
+function get2OK(resp){
+    texts = resp.data;
+
+    renderTexts()
 }
