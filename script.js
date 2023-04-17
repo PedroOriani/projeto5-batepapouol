@@ -36,10 +36,13 @@ let texts = [];
 // RESGATANDO AS MENSAGENS DO SERVIDOR
 
 function getDatas(){
+setInterval(() => {
 
     const promise = axios.get('https://mock-api.driven.com.br/api/vm/uol/messages');
     promise.then( getOK );
     promise.catch( getErro );
+    
+}, 3000);
 
 }
 
@@ -50,7 +53,7 @@ function getOK(resp){
     console.log(resp.data);
     texts = resp.data;
 
-    setInterval(renderTexts(), 3000);
+    renderTexts()
 }
 
 function getErro(resp){

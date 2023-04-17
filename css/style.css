@@ -117,6 +117,8 @@
 
     border-top: 10px solid #dcdcdc;
     border-bottom: 10px solid #dcdcdc;
+
+    word-break: break-word;
 }
 
 .message-box{
@@ -139,7 +141,7 @@
     line-height: 20px;
     color: #000000;
 
-    word-break: break-word;
+    word-wrap: break-word;
 
     border-top: 10px solid #ffffff;
     border-bottom: 10px solid #ffffff;
@@ -167,6 +169,8 @@
 
     border-top: 10px solid #ffdede;
     border-bottom: 10px solid #ffdede;
+
+    word-break: break-word;
 }
 
 .from {
